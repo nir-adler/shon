@@ -1,18 +1,14 @@
 const express = require('express')
 const { PythonShell } = require('python-shell')
 const cors = require('cors')
-
-
-// let a=shell.exec('python3 python/test.py',{async:true})
-// console.log(a)
-// shell.exec('ls')
+const port=process.env.PORT || 8081
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send({text:'hello aaaaaa'})
+    res.send({text:'test'})
 })
 
 app.post('/value', (req, res) => {
@@ -28,12 +24,8 @@ app.post('/value', (req, res) => {
         } 
         res.send(result)
     });
-    
-
-  
 })
 
-
-app.listen(8081, () => {
-    console.log('Server up on port 8081')
+app.listen(port, () => {
+    console.log(`Server up on port ${port}`)
 })

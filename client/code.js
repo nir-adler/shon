@@ -2,11 +2,12 @@ const form = document.querySelector('form')
 const input = form.querySelector('input')
 const text1=document.querySelector('#text-1')
 const text2=document.querySelector('#text-2')
-console.log(text1)
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     let value = input.value
-    const url = 'http://62.219.235.16:8081/value'
+    const url = 'http://server:8081/value'
     console.log(value)
     try {
         text1.innerText='Loding'
